@@ -12,7 +12,7 @@ RUN apt-get -y update && \
     apt-get -y upgrade && \
     apt-get -y dist-upgrade && \
     DEBIAN_FRONTEND=noninteractive apt-get -y install \
-               sudo command-not-found vim-gtk3 wget inkscape bc \
+               sudo command-not-found vim wget inkscape bc \
                rsync kmod execstack sqlite3 libsqlite3-dev libzstd-dev \
                libzstd-dev cmake lib32z1-dev unar imagemagick \
                subversion git ccache gcc g++ binutils autoconf automake \
