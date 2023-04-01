@@ -44,4 +44,3 @@
 +                install_command = "%sapt install -y %s" % (command_prefix, package_name)
                  print("%s" % install_command, file=sys.stdout)
                  subprocess.call(install_command.split(), shell=False)
-

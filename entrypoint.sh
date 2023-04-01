@@ -13,4 +13,3 @@ if [ `id -u` -eq 0 ]; then
 else
 	[ "$#" -gt 0 ] && "$@" || "$DEFAULT_SHELL"
 fi
-
