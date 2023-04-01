@@ -1,0 +1,3 @@
+*
+!patch-cnf-autoinstall.patch
+!entrypoint.sh
