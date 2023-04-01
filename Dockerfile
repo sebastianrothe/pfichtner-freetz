@@ -70,3 +70,7 @@ ARG BUILD_TARGET=6591
 ARG FFRITZ_CURRENT_COMMIT_HASH=8a164ee31a200c10c16735320aa56dd726603339
 RUN git clone --branch $BUILD_TARGET --depth 1 https://bitbucket.org/fesc2000/ffritz.git
 
+WORKDIR $WORKDIR/ffritz
+RUN cp ./user-oem.patch ./puma7/atom/ && \
+    cp ./user-oem.patch ./puma7/arm/ && \
+    make
