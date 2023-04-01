@@ -44,7 +44,7 @@ git clone https://github.com/Freetz-NG/freetz-ng.git
 # cd into the cloned repo
 cd freetz-ng
 # start docker container (will start /bin/bash)
-docker run --rm -it -v $PWD:/workspace pfichtner/freetz
+docker run --rm -it --platform linux/amd64 -v $PWD:/workspace pfichtner/freetz
 ```
 (if you don't checkout Freetz(-NG) to the current directory replace $PWD with the path to the checked out repository)
 Please note that the filesystem where Freetz(-NG) has been checked out has to be case-sensitive! 
@@ -62,6 +62,8 @@ Please note that the filesystem where Freetz(-NG) has been checked out has to be
 ```-v $PWD:/workspace``` mount the current working directory of the host as /workspace inside the container
 
 ```-v a-volume-name:/workspace``` use the existing "a-volume-name"-volume or create it if it does not exist and use it as /workspace inside the container
+
+```--platform linux/amd64``` use x86_64 images, if running on a Mac with M1/2 (ARM) for instance
 
 ```pfichtner/freetz``` the image to create the container from
 
