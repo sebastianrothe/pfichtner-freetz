@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 ARG BUILD_USER=builduser
 ENV BUILD_USER=$BUILD_USER
@@ -11,6 +11,8 @@ COPY patch-cnf-autoinstall.patch /tmp
 COPY entrypoint.sh /usr/local/bin
 
 # see https://github.com/Freetz-NG/freetz-ng/blob/master/docs/PREREQUISITES.md#ubuntu
+# match with https://bitbucket.org/fesc2000/ffritz/src/6591/.gitpod.Dockerfile
+# TODO: split into freetz-ng and ffritz
 RUN apt-get -y update && \
     apt-get -y upgrade && \
     apt-get -y dist-upgrade && \ 
@@ -21,7 +23,7 @@ RUN apt-get -y update && \
         subversion git ccache gcc g++ binutils autoconf automake \
         autopoint libtool-bin make bzip2 libncurses5-dev libreadline-dev \
         zlib1g-dev flex bison patch texinfo tofrodos gettext pkg-config sharutils \
-        ecj fastjar perl libstring-crc32-perl ruby gawk python \
+        ecj fastjar perl libstring-crc32-perl ruby gawk python2 \
         bsdmainutils locales \
         libusb-dev unzip intltool libacl1-dev libcap-dev libc6-dev-i386 \
         lib32ncurses5-dev gcc-multilib lib32stdc++6 libglib2.0-dev \
