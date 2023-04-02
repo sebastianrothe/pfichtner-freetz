@@ -20,6 +20,7 @@ make
 #`make rebuild` to not use the pre-built library binaries - takes forever
 
 # find the image in your local filesystem at ./firmware/fbxxx.tar
+# then type `exit`
 ```
 
 ### Install the firmware
@@ -32,3 +33,18 @@ make
 1. Setup SSH https://bitbucket.org/fesc2000/ffritz/src/6591/README.md#first-use
 
 ## freetz
+
+### Building the image
+`docker build --pull -t pfichtner/freetz:latest --platform linux/amd64 .`
+
+### Building the firmware
+```sh
+docker run -it --platform linux/amd64 -v $(pwd)/firmware/:/workspace/ffritz/images/ pfichtner/freetz:latest 
+
+# inside the container, run:
+make
+#`make rebuild` to not use the pre-built library binaries - takes forever
+
+# find the image in your local filesystem at ./firmware/fbxxx.tar
+# then type `exit`
+```
