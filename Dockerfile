@@ -72,5 +72,6 @@ RUN git clone --branch $BUILD_TARGET --depth 1 https://bitbucket.org/fesc2000/ff
 
 WORKDIR $WORKDIR/ffritz
 RUN cp ./user-oem.patch ./puma7/atom/ && \
-    cp ./user-oem.patch ./puma7/arm/ && \
-    make
+    cp ./user-oem.patch ./puma7/arm/
+# will only work during runtime because we want to mount a folder
+#RUN make
