@@ -13,10 +13,10 @@ Update `FREETZ_CURRENT_COMMIT_HASH` and `FFRITZ_CURRENT_COMMIT_HASH` with the cu
 
 ### Building the firmware
 ```sh
-docker run -it -v $(pwd)/firmware/:/workspace/ffritz/images/ pfichtner/freetz:latest
+docker run -it --platform linux/amd64 -v $(pwd)/firmware/:/workspace/ffritz/images/ pfichtner/freetz:latest 
 
 # inside the container, run:
-make 
+make
 #`make rebuild` to not use the pre-built library binaries - takes forever
 
 # find the image in your local filesystem at ./firmware/fbxxx.tar
