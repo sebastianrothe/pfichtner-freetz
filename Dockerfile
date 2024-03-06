@@ -73,7 +73,7 @@ ARG FFRITZ_CURRENT_COMMIT_HASH=a841574b1a8a707a104a272b2d76ee489f51f249
 RUN git clone --branch $BUILD_TARGET --depth 1 https://bitbucket.org/fesc2000/ffritz.git
 
 WORKDIR $WORKDIR/ffritz
-RUN cp ./user-oem.patch ./puma7/atom/ && \
-    cp ./user-oem.patch ./puma7/arm/
+RUN cp ./conf.mk.dfl ./conf.mk && \
+    sed -i 's/^#OEM_PATCH=y/OEM_PATCH=y/g' ./conf.mk
 # will only work during runtime because we want to mount a folder
 #RUN make
