@@ -32,6 +32,14 @@ make
 1. Install firmware https://bitbucket.org/fesc2000/ffritz/src/6591/README.md
 1. Setup SSH https://bitbucket.org/fesc2000/ffritz/src/6591/README.md#first-use
 
+### Updating the firmware
+
+1. Update commit hashes in the `Dockerfile``
+1. Build a new firmware image
+1. Copy the image to the box (via ftp or NAS) 
+1. Login via SSH or telnet (telnet: fritzbox user and web password) within the first 10 minutes after restart
+1. see https://bitbucket.org/fesc2000/ffritz/src/6591/README.md#markdown-header-installing-the-image-with-sshtelnetconsole-access
+
 ## freetz
 
 ### Building the image
