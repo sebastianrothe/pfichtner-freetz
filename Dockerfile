@@ -60,7 +60,7 @@ WORKDIR $WORKDIR
 USER $BUILD_USER
 
 # freetz-ng
-ARG FREETZ_CURRENT_COMMIT_HASH=eaf06dbb153d8ee2eabeedb827f1c8d80e409744
+ARG FREETZ_CURRENT_COMMIT_HASH=f4edf3b937f61feb54d916d123a0676b884a8732
 RUN git clone --depth 1 https://github.com/Freetz-NG/freetz-ng
 WORKDIR $WORKDIR/freetz-ng
 # will only work during runtime because we have to select something in the menu
@@ -69,7 +69,7 @@ WORKDIR $WORKDIR/freetz-ng
 # ffritz
 WORKDIR $WORKDIR
 ARG BUILD_TARGET=6591
-ARG FFRITZ_CURRENT_COMMIT_HASH=8a164ee31a200c10c16735320aa56dd726603339
+ARG FFRITZ_CURRENT_COMMIT_HASH=a841574b1a8a707a104a272b2d76ee489f51f249
 RUN git clone --branch $BUILD_TARGET --depth 1 https://bitbucket.org/fesc2000/ffritz.git
 
 WORKDIR $WORKDIR/ffritz
